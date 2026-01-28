@@ -1,0 +1,35 @@
+from turtle import Screen, Turtle
+import random, time, os
+
+
+class Trapper(Turtle):
+    def __init__(self, shape = "square", undobuffersize = 1000, visible = True):
+        super().__init__(shape, undobuffersize, visible)
+        self.shapesize(stretch_len=5,stretch_wid=1)
+        self.goto(0,-200)
+        self.color('white')
+        self.penup()
+        self.speed('fastest')
+
+    def go_left(self):
+         self.goto(self.xcor()-100, self.ycor())
+    def go_right(self):
+         self.goto(self.xcor()+100, self.ycor())
+
+class Write_Score(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.penup()
+        self.hideturtle()
+        self.score = 0
+        self.color('orange')
+
+     # تحديث النقاط والاضافة
+    def update_score(self,given_number):
+        self.goto(0,100)
+        self.clear()
+        if given_number == 0:
+            self.score = 0
+        else:
+            self.score += given_number
+        self.write(f"Score: {self.score}", font=('arial', 19, 'bold'))
