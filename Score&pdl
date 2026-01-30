@@ -11,10 +11,17 @@ class Trapper(Turtle):
         self.penup()
         self.speed('fastest')
 
-    def go_left(self):
-         self.goto(self.xcor()-100, self.ycor())
+     def go_left(self):
+         if self.xcor() <= -350 :
+            self.goto(self.xcor(), self.ycor())
+         else:
+            self.goto(self.xcor()-100, self.ycor())
+
     def go_right(self):
-         self.goto(self.xcor()+100, self.ycor())
+        if self.xcor() >= 350:
+            self.goto(self.xcor(), self.ycor())
+        else:
+            self.goto(self.xcor()+100, self.ycor())
 
 class Write_Score(Turtle):
     def __init__(self):
