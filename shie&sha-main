@@ -41,7 +41,7 @@ def game():
             omer.forward(10)
             
              # الاصطدام بالمحظور
-            if omer.pencolor() == 'red' and omer.distance(hammer) <= 50:
+            if omer.pencolor() == 'red' and omer.distance(hammer) <= 50 and omer.shape() == 'turtle':
                 on_go = False
                 time.sleep(2)
                 window.clear()
